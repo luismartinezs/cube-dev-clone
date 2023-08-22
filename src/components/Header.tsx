@@ -1,4 +1,5 @@
 import { Logo } from "~/components/Logo";
+import { Menu } from "~/components/Menu/Menu";
 import { NavItem, type TNavItem } from "~/components/NavItem";
 
 const navLinks: Array<TNavItem> = [
@@ -133,13 +134,15 @@ export function Header() {
       <div className="container mx-auto flex w-full items-center justify-between">
         <Logo />
         <nav aria-label="primary" className="font-semibold">
-          <ul className="flex items-center justify-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <NavItem item={link} />
-              </li>
-            ))}
-          </ul>
+          <Menu>
+            <ul className="flex items-center justify-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <NavItem item={link} />
+                </li>
+              ))}
+            </ul>
+          </Menu>
         </nav>
         <nav aria-label="secondary" className="font-semibold">
           <ul className="flex items-center justify-center gap-8">

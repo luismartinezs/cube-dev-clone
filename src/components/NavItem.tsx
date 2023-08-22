@@ -1,6 +1,7 @@
 import classnames from "classnames";
 import Link from "next/link";
 import { DropdownMenu, type TMenuItem } from "~/components/DropdownMenu";
+import { Menu } from "~/components/Menu/Menu";
 
 type TBase = {
   style?: "link" | "button";
@@ -19,10 +20,15 @@ export function NavItem({ item }: { item: TNavItem }) {
   if (type === "menu") {
     const { menu } = item;
     return (
-      <DropdownMenu
+      <Menu.Item
+        id={label}
         button={<button className={classnames(style, "my-2")}>{label}</button>}
-        links={menu}
+        menu={menu}
       />
+      // <DropdownMenu
+      //   button={<button className={classnames(style, "my-2")}>{label}</button>}
+      //   links={menu}
+      // />
     );
   }
 
