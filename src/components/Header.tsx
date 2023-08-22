@@ -10,6 +10,26 @@ const navLinks: Array<TNavItem> = [
         label: "Why cube cloud?",
         href: "https://cube.dev/product/why-cube-cloud",
       },
+      {
+        label: "Data Modeling",
+        href: "https://cube.dev/product/data-modeling",
+      },
+      {
+        label: "Data Access Control",
+        href: "https://cube.dev/product/data-access-control",
+      },
+      {
+        label: "Caching and Data Performance",
+        href: "https://cube.dev/product/caching-and-data-performance",
+      },
+      {
+        label: "Data APIs",
+        href: "https://cube.dev/product/data-apis",
+      },
+      {
+        label: "Security",
+        href: "https://cube.dev/product/semantic-layer-security",
+      },
     ],
   },
   {
@@ -17,7 +37,19 @@ const navLinks: Array<TNavItem> = [
     label: "Use Cases",
     menu: [
       {
-        label: "Why cube cloud?",
+        label: "Embedded Analytics",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Semantic Layer",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "LLM & AI",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Real-time Analytics",
         href: "https://cube.dev/product/why-cube-cloud",
       },
     ],
@@ -37,7 +69,43 @@ const navLinks: Array<TNavItem> = [
     label: "Resources",
     menu: [
       {
-        label: "Why cube cloud?",
+        label: "Learning Hub",
+        subLabel: "Read about major concepts and dive into technical details",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Docs",
+        subLabel: "Read about major concepts and dive into technical details",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Blog",
+        subLabel: "Product updates, user stories, and more",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Examples",
+        subLabel: "Explore what you can build with Cube",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Community",
+        subLabel: "See how to contribute to Cube",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Events",
+        subLabel: "Learn more about our upcoming events",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Customer Stories",
+        subLabel: "See how leading companies use Cube",
+        href: "https://cube.dev/product/why-cube-cloud",
+      },
+      {
+        label: "Cube Partner Network",
+        subLabel: "Connect with Cube Consulting Partners",
         href: "https://cube.dev/product/why-cube-cloud",
       },
     ],

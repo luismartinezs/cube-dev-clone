@@ -1,8 +1,6 @@
 import classnames from "classnames";
 import Link from "next/link";
-import { useRef } from "react";
 import { DropdownMenu, type TMenuItem } from "~/components/DropdownMenu";
-import { useMouseOver } from "~/hooks/useMouseOver";
 
 type TBase = {
   style?: "link" | "button";
@@ -15,22 +13,16 @@ export type TNavItem = TMenu | TLink;
 
 export function NavItem({ item }: { item: TNavItem }) {
   const { style, label, type } = item;
-  const menuRef = useRef(null);
-  const isHovered = useMouseOver(menuRef.current);
 
   const classes = style === "button" ? "button" : "link";
 
   if (type === "menu") {
     const { menu } = item;
     return (
-      <Link
-        ref={menuRef}
-        href="#"
-        className={classnames("relative isolate text-white", classes)}
-      >
-        {label}
-        <DropdownMenu links={menu} show={isHovered} />
-      </Link>
+      <DropdownMenu
+        button={<button className={classnames(style, "my-2")}>{label}</button>}
+        links={menu}
+      />
     );
   }
 

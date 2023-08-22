@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen bg-white font-sans text-black;
+  @apply min-h-screen bg-dark-200 font-sans text-white;
 }
 
 .button {
-  @apply rounded-lg bg-cherry-500 px-4 py-2 font-bold text-white transition hover:bg-cherry-600;
+  @apply rounded-lg bg-cherry-500 px-4 py-2 font-bold text-white transition hover:bg-cherry-600 group-hover:bg-cherry-600;
 }
 
 .link {
-  @apply transition hover:text-indigo-500;
+  @apply transition hover:text-indigo-500 group-hover:text-indigo-500;
 }
