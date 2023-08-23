@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import Link from "next/link";
 import { useMenuContext } from "~/components/Menu/Menu.context";
 
@@ -15,6 +16,7 @@ export function MenuItem({
   }>;
 }) {
   const ctx = useMenuContext();
+  const isActive = ctx.activeId === id;
 
   return (
     <div
@@ -23,25 +25,30 @@ export function MenuItem({
       className="relative"
     >
       {button}
-      {ctx.activeId === id && (
-        <ul className="absolute -left-4 z-10 overflow-hidden rounded-lg bg-white">
-          {menu.map((link) => (
-            <li
-              key={link.label}
-              className="group border-b last:border-b-0 hover:bg-gray-100"
-            >
-              <Link className=" block whitespace-nowrap p-4" href={link.href}>
-                <div className="link text-gray-900">{link.label}</div>
-                {link.subLabel && (
-                  <div className="text-sm font-medium text-gray-400">
-                    {link.subLabel}
-                  </div>
-                )}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul
+        className={classnames(
+          "absolute -left-4 z-10 origin-top-left overflow-hidden rounded-lg bg-white transition-all",
+          isActive
+            ? "scale-y-100 opacity-100"
+            : "pointer-events-none scale-y-50 opacity-0"
+        )}
+      >
+        {menu.map((link) => (
+          <li
+            key={link.label}
+            className="group border-b last:border-b-0 hover:bg-gray-100"
+          >
+            <Link className=" block whitespace-nowrap p-4" href={link.href}>
+              <div className="link text-gray-900">{link.label}</div>
+              {link.subLabel && (
+                <div className="text-sm font-medium text-gray-400">
+                  {link.subLabel}
+                </div>
+              )}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
